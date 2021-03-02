@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "824202002186",
+    "project_id": "mena-garden-garden",
+    "storage_bucket": "mena-garden-garden.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824202002186:android:f8872eef44ff9fac5444f3",
+        "android_client_info": {
+          "package_name": "com.garden.menagarden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824202002186-qq9hfu9cr339akrsr05k5fr5uvnptura.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNKjlT2FQJomaJPzGtXzgVDJymBWUc2SU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824202002186-qq9hfu9cr339akrsr05k5fr5uvnptura.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

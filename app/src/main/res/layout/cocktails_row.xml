@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:background="@drawable/backgroundapp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="20dp"
+        app:cardBackgroundColor="#D1C2E4"
+        app:cardCornerRadius="20dp"
+        android:outlineAmbientShadowColor="@color/white"
+        app:cardElevation="25dp">
+
+        <TextView
+
+            android:id="@+id/cocktailDescripEN"
+            android:layout_width="226dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center_vertical"
+            android:textColor="#AE1414"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            tools:text="@string/mojitotext" />
+
+        <ImageView
+            android:id="@+id/image_cocktail"
+            android:layout_width="90dp"
+            android:layout_height="160dp" />
+
+        <TextView
+
+            android:id="@+id/nombreCocktail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            tools:text="MOJITO" />
+
+        <TextView
+
+            android:id="@+id/cocktailDescripES"
+            android:layout_width="227dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="45dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Ron blanco, azúcar, hojas de hierbabuena y agua con gas." />
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

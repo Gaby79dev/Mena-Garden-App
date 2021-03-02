@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.garden.menagarden.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_menu"
+            app:destination="@id/nav_menu"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_reservar"
+            app:destination="@id/nav_reservar"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_gallery"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_specialoffers"
+            app:destination="@id/nav_specialoffers"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_cocktails"
+            app:destination="@id/nav_cocktails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="?android:attr/windowOverscan"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_nav_home_to_netFragment"
+            app:destination="@id/netFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_nav_home_to_historiaFragment"
+            app:destination="@id/nav_historiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.garden.menagarden.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="com.garden.menagarden.ui.menu.MenuFragment"
+        android:label="@string/menu_Menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/nav_cocktails"
+        android:name="com.garden.menagarden.ui.cocktails.CocktailsFragment"
+        android:label="@string/menu_Cocktails"
+        tools:layout="@layout/fragment_cocktails" >
+        <action
+            android:id="@+id/action_nav_cocktails_to_detailsCocktailsFragment"
+            app:destination="@id/detailsCocktailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_reservar"
+        android:name="com.garden.menagarden.ui.reservas.ReservasFragment"
+        android:label="@string/menu_reserve"
+        tools:layout="@layout/fragment_reservas" />
+
+    <fragment
+        android:id="@+id/nav_specialoffers"
+        android:name="com.garden.menagarden.ui.ofertas.OfertasFragment"
+        android:label="@string/menu_specialoffers"
+        tools:layout="@layout/fragment_ofertas" />
+
+    <fragment
+        android:id="@+id/netFragment"
+        android:name="com.garden.menagarden.NetFragment"
+        android:label="@string/menu_Follow_us"
+        tools:layout="@layout/fragment_net" />
+
+    <fragment
+        android:id="@+id/nav_historiaFragment"
+        android:name="com.garden.menagarden.HistoriaFragment"
+        android:label="@string/nav_history"
+        tools:layout="@layout/fragment_historia" >
+        <action
+            android:id="@+id/action_nav_historiaFragment_to_mapFragment"
+            app:destination="@id/nav_mapFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mapFragment"
+        android:name="com.garden.menagarden.MapFragment"
+        android:label="Google Maps"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/detailsCocktailsFragment"
+        android:name="com.garden.menagarden.DetailsCocktailsFragment"
+        android:label="fragment_details_cocktails"
+        tools:layout="@layout/fragment_details_cocktails" />
+
+
+</navigation>

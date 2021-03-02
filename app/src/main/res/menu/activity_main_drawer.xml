@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_vectorhome"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_menu_menu"
+            android:title="@string/menu_Menu" />
+
+        <item
+            android:id="@+id/nav_cocktails"
+            android:icon="@drawable/ic_menu_cocktails"
+            android:title="@string/menu_Cocktails" />
+
+        <item
+            android:id="@+id/nav_reservar"
+            android:icon="@drawable/ic_booking"
+            android:title="@string/menu_reservar" />
+
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_foto_gallery" />
+
+
+        <item
+            android:id="@+id/nav_specialoffers"
+            android:icon="@drawable/ic_euro"
+            android:title="@string/menu_specialoffers" />
+
+
+    </group>
+</menu>

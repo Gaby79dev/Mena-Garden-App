@@ -1,0 +1,196 @@
+<resources>
+    <string name="app_name" translatable="false">Mena Garden</string>
+    <string name="galer_a" translatable="false">galeria</string>
+    <string name="reservas" translatable="false">reservas</string>
+
+    <string name="todo" translatable="false">imagecarta</string>
+    <string name="iomageCocktais" translatable="false">imageCocktails</string>
+    <string name="imageReservas" translatable="false">imageReservas</string>
+    <string name="imageFacebook" translatable="false">imageFacebook</string>
+    <string name="imageInstagram" translatable="false">imageInstagram</string>
+    <string name="imagemap" translatable="false">imageMap</string>
+    <string name="imagenEntrada" translatable="false">imageEntrada</string>
+    <string name="men" translatable="false">imageMenu</string>
+    <string name="menú" translatable="false">Menú</string>
+    <string name="imageView" translatable="false">imageView</string>
+    <string name="boton1" translatable="false">boton1</string>
+    <string name="boton3" translatable="false">boton3</string>
+    <string name="button4" translatable="false">boton4</string>
+    <string name="button5">boton5</string>
+    <string name="button6">boton6</string>
+    <string name="button7">boton7</string>
+    <string name="button8">boton8</string>
+    <string name="button9">boton9</string>
+    <string name="button10">boton10</string>
+    <string name="button11">boton11</string>
+    <string name="button12">boton12</string>
+    <string name="button13">boton13</string>
+    <string name="button14">boton14</string>
+    <string name="button15">boton15</string>
+    <string name="button16">boton16</string>
+    <string name="teléfono">teléfono</string>
+    <string name="email">email</string>
+    <string name="whatsapp">whatsapp</string>
+    <string name="telefono">telefonoimagen</string>
+    <string name="whatsappIcono">whatssapicon</string>
+    <string name="logoreservas">logoreservas</string>
+    <string name="logoreservas2">logoreservas2</string>
+    <string name="imagenlogo" translatable="false">imagenlogo</string>
+    <string name="logo" translatable="false">logo</string>
+    <string name="menagarden" translatable="false">gardenmena</string>
+    <string name="title_activity_main2" translatable="false">MainActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_reservar">Reserve</string>
+    <string name="menu_specialoffers">Special offers</string>
+    <string name="menu_Menu">Menu</string>
+    <string name="email_garden" translatable="false">menagardennerja@gmail.com</string>
+    <string name="boton_whatsapp" translatable="false">boton_whatsapp</string>
+    <string name="large_text" translatable="false">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="mena_garden_history">Mena Garden History</string>
+    <string name="gallery">Gallery</string>
+    <string name="offers">Offers</string>
+    <string name="SEND">SEND</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="mojitotext" translatable="false">White rum, sugar, mint leaveslemon, sparkling water.</string>
+    <string name="mena_gardenbtn" translatable="false">Mena Garden</string>
+    <string name="menubtn" translatable="false">Menu</string>
+    <string name="reservebtn">Reserve</string>
+    <string name="title_activity_image_detail" translatable="false">ImageDetail</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="menu_foto_gallery">Photo Gallery</string>
+    <string name="menu_Cocktails">Cocktails</string>
+    <string name="welcome_to_the_reservation_area_please_select_the_way_to_book_with_us_you_can_also_fill_out_the_following_form_and_send_it_by_email_thanks_a_lot">Welcome to the reservation area, please select the way to book with us. You can fill out the following form and send it by email or Whatsapp. Thanks a lot!</string>
+    <string name="phone_contact">PHONE CONTACT</string>
+    <string name="whatsapp_contact">WHATSAPP CONTACT</string>
+    <string name="email_form">EMAIL FORM</string>
+    <string name="reservation_name">RESERVATION NAME</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="date">DATE</string>
+    <string name="time">TIME</string>
+    <string name="pax_number">PAX. NUMBER</string>
+    <string name="observations">OBSERVATIONS</string>
+    <string name="send_by_email_or_Whatsapp" translatable="false">SEND BY EMAIL OR WHATSAPP</string>
+    <string name="cocktailsbtn">Cocktails</string>
+    <string name="cocktails">Cocktails</string>
+    <string name="menu_reserve">Reserve</string>
+    <string name="menu_Follow_us">Follow us!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nav_history" translatable="false">Mena Garden</string>
+    <string name="action_Exit">Exit</string>
+    <string name="share">Share</string>
+    <string name="we_welcome_you_to_mena_garden_gastrobar_located_in_the_mena_hostel_typical_andalusian_house_from_the_17th_century_in_the_heart_of_nerja_calle_el_barrio_18">We welcome you to “Mena Garden”, Gastrobar, located in the Mena hostel (typical Andalusian house from the 17th century) in the heart of Nerja (Calle el Barrio 18).</string>
+    <string name="mena_garden_is_the_consequence_of_a_long_term_dreamt_project_and_designed_to_finally_open_its_doors_in_july_2020">Mena Garden is the consequence of a long term dreamt project and designed to finally open its doors in July 2020.</string>
+    <string name="a_haven_of_peace_where_you_can_enjoy_its_typical_andalusian_terrace_and_its_garden_area_with_fruit_trees_from_the_area_adorned_with_a_variety_of_flowers">A haven of peace, where you can enjoy its typical Andalusian terrace and its garden area, with fruit trees from the area, adorned with a variety of flowers.</string>
+    <string name="mena_garden_offers_service_throughout_the_day_starting_with_a_wide_variety_of_breakfasts_english_norwegian_eggs_benedict_a_variety_of_croissants_and_all_accompanied_by_the_best_fresh_fruit">Mena Garden offers service throughout the day, starting with a wide variety of breakfasts (English, Norwegian, Eggs Benedict, a variety of croissants ...) and all accompanied by the best fresh fruit.</string>
+    <string name="in_our_living_room_called_the_tulips_room_on_cold_winter_days_you_will_feel_at_home_in_the_warmth_of_the_wood_fireplace_who_can_resist_a_good_hot_tea_or_coffee_accompanied_by_a_home_made_cake">In our living room, called the Tulipsroom, on cold winter days, you will feel at home in the warmth of the wood fireplace. Who can resist a good hot tea or coffee accompanied by a home made cake?</string>
+    <string name="would_you_like_a_brunch_or_lunch_well_this_is_your_place_offering_a_wide_variety_of_toasts_salads_with_the_best_fruit_and_why_not_accompany_it_with_the_best_drink_a_good_wine_or_a_cold_beer">Would you like a brunch or lunch? .... well this is your place, offering a wide variety of toasts, salads with the best fruit. And why not accompany it with the best drink?... A good wine or a cold beer!</string>
+    <string name="and_more_summer_nights_will_never_be_the_same_in_nerja_come_and_enjoy_the_best_dinners_and_cocktails_in_this_magnificent_place_enjoy_the_breeze_that_the_sal_n_beach_offers_and_share_our_culinary_specialities_such_as_the_famous_mena_boom_with_your_friends_and_family">And more ..... Summer nights will never be the same in Nerja! Come and enjoy the best dinners and cocktails in this magnificent place. Enjoy the breeze that the “Salón beach” offers, and share our culinary specialities, such as the famous Mena Boom, with your friends and family.</string>
+    <string name="in_the_mena_garden_app_you_will_be_able_to_see_our_entire_menu_of_meals_and_cocktails_in_addition_you_will_be_able_to_benefit_from_the_different_events_and_offers_that_will_be_published_enjoy_mena_garden_we_hope_that_your_visit_will_be_the_most_pleasant">In the Mena Garden App, you will be able to see our entire menu of meals and cocktails. In addition, you will be able to benefit from the different events and offers that will be published. Enjoy Mena Garden! We hope that your visit will be the most pleasant!</string>
+    <string name="mena_garden">MENA GARDEN</string>
+    <string name="imagehome1">imagehome1</string>
+    <string name="imagehome2">imagehome2</string>
+    <string name="string_imagehome2">imagehome2</string>
+    <string name="titulo">Titulo</string>
+    <string name="send_by_email_or_whatsapp">SEND BY EMAIL OR WHATSAPP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

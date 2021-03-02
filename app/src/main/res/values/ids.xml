@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="imgPhotoView" type="id" />
+    <item name="nav_historiaFragment" type="id"/>
+    <item name="nav_mapFragment" type="id"/>
+
+</resources>

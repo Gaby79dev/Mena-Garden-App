@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TEXT"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundapp"
+    tools:context=".ui.reservas.ReservasFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        app:cardBackgroundColor="#EFDCE2"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textreserva"
+                android:layout_width="340dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+
+                android:gravity="center"
+                android:text="@string/welcome_to_the_reservation_area_please_select_the_way_to_book_with_us_you_can_also_fill_out_the_following_form_and_send_it_by_email_thanks_a_lot"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/btPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#A186CD"
+                android:text="@string/phone_contact"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/email_form"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/reservaAnombrede"
+                android:layout_width="213dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTintMode="add"
+                android:overScrollMode="always"
+                android:text="@string/reservation_name"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/ETname"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginStart="4dp"
+                android:autofillHints=""
+                android:ems="40"
+                android:inputType="textEmailAddress"
+                android:overScrollMode="always"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/númerotelefono"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:backgroundTintMode="add"
+                android:text="@string/phone_number"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/ETtelefono"
+                android:layout_width="113dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="4dp"
+                android:autofillHints=""
+                android:ems="40"
+                android:gravity="start"
+                android:inputType="phone"
+                android:minHeight="150dp"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/fechareserva"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:backgroundTintMode="add"
+                android:text="@string/date"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/ETdate"
+                android:layout_width="113dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="4dp"
+                android:autofillHints=""
+                android:clickable="false"
+                android:ems="40"
+                android:focusable="false"
+                android:gravity="start"
+                android:inputType="date"
+                android:minHeight="150dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/horareserva"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/time"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/ETtime"
+                android:layout_width="112dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="4dp"
+                android:autofillHints=""
+                android:clickable="false"
+                android:ems="40"
+                android:focusable="false"
+                android:gravity="start"
+                android:inputType="time"
+                android:minHeight="150dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/comensalesReserva"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:backgroundTintMode="add"
+                android:text="@string/pax_number"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/ETpax"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:autofillHints=""
+                android:ems="40"
+                android:gravity="start"
+                android:inputType="number"
+                android:minHeight="150dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/observaciones"
+                android:layout_width="138dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="4dp"
+                android:backgroundTintMode="add"
+                android:text="@string/observations"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+
+            <EditText
+                android:id="@+id/ETobservaciones"
+                android:layout_width="350dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="2dp"
+                android:autofillHints=""
+                android:ems="20"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLines="5"
+                android:minHeight="150dp"
+                android:overScrollMode="always"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/SendEmailBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#A186CD"
+                android:text="@string/send_by_email_or_whatsapp"
+                android:textColor="@color/black" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/emailGarden"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:autofillHints=""
+                    android:focusable="false"
+                    android:inputType="textEmailAddress"
+                    android:text="@string/email_garden"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/ETasunto"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:autofillHints=""
+                    android:focusable="false"
+                    android:inputType="textEmailAddress"
+                    android:text="Reserva desde App"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.core.widget.NestedScrollView>
