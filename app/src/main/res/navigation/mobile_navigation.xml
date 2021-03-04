@@ -109,7 +109,7 @@
         android:id="@+id/nav_historiaFragment"
         android:name="com.garden.menagarden.HistoriaFragment"
         android:label="@string/nav_history"
-        tools:layout="@layout/fragment_historia" >
+        tools:layout="@layout/fragment_historia">
         <action
             android:id="@+id/action_nav_historiaFragment_to_mapFragment"
             app:destination="@id/nav_mapFragment"

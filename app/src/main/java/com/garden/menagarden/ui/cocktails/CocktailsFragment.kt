@@ -5,16 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.drawToBitmap
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.garden.menagarden.MainActivity
+import com.garden.menagarden.R
 import com.garden.menagarden.RecyclerAdapter
 import com.garden.menagarden.data.model.Cocktails
 import com.garden.menagarden.databinding.FragmentCocktailsBinding
-import kotlinx.android.synthetic.main.nav_header_main.*
 
 
 class CocktailsFragment : Fragment(), RecyclerAdapter.OnCocktailsClickListener {
@@ -32,6 +31,8 @@ class CocktailsFragment : Fragment(), RecyclerAdapter.OnCocktailsClickListener {
 
 
         binding = FragmentCocktailsBinding.inflate(inflater,container,false)
+
+
 
 
         return binding.root
@@ -177,23 +178,22 @@ class CocktailsFragment : Fragment(), RecyclerAdapter.OnCocktailsClickListener {
 
     override fun onImageClick(image: String) {
 
-        val bitmap = imageView?.drawToBitmap()
-        val bundle = Bundle().apply {
-
-            putParcelable("image",bitmap)
-        }
 
 
-        findNavController().navigate(CocktailsFragmentDirections.actionNavCocktailsToDetailsCocktailsFragment())//,bundle // da error) // aquí me queda llevar la imagen al otro fragment
+        val imagecocktail = Bundle()
+        imagecocktail.putString("image",image)
+
+
+        findNavController().navigate(R.id.action_nav_cocktails_to_detailsCocktailsFragment, imagecocktail)
 
     }
+
 
     override fun onItemClick(name: String) {
 
-    Toast.makeText(requireContext(),"Cocktails List",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Cocktails List", Toast.LENGTH_SHORT).show()
 
     }
-
 
 
 
