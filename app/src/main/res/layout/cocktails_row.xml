@@ -16,7 +16,6 @@
         android:elevation="20dp"
         app:cardBackgroundColor="#D1C2E4"
         app:cardCornerRadius="20dp"
-        android:outlineAmbientShadowColor="@color/white"
         app:cardElevation="25dp">
 
         <TextView
@@ -34,8 +33,10 @@
 
         <ImageView
             android:id="@+id/image_cocktail"
+            android:background="#D1C2E4"
             android:layout_width="90dp"
-            android:layout_height="160dp" />
+            android:layout_height="160dp"
+            android:contentDescription="@string/imagencockeles" />
 
         <TextView
 

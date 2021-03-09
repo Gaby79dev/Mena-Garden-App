@@ -1,4 +1,4 @@
-package com.garden.menagarden
+package com.garden.menagarden.ui.cocktails
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,6 +19,8 @@ class DetailsCocktailsFragment : Fragment() {
     ): View {
         binding = FragmentDetailsCocktailsBinding.inflate(inflater, container, false)
 
+
+       // Bundle of cocktail image
 
         val imagecocktail = arguments?.getString("image")
 

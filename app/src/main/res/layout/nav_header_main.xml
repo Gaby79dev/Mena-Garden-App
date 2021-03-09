@@ -29,9 +29,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="373dp"
         android:layout_height="wrap_content"
-        android:text="@string/email_garden" />
+        android:text="@string/c_el_barrio_n_18_telf_34_952520541" />
 
 
 </LinearLayout>

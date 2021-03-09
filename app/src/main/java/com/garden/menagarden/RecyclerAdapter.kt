@@ -59,7 +59,7 @@ class RecyclerAdapter(
 
         override fun bind(item: Cocktails, position: Int) {
 
-            Glide.with(context).load(item.image).centerCrop().into(itemView.image_cocktail)
+            Glide.with(context).load(item.image).into(itemView.image_cocktail)
 
 
             itemView.setOnClickListener { itemOnClickListener.onItemClick(item.name)  } // onClick in item

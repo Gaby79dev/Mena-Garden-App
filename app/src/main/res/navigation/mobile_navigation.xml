@@ -96,7 +96,7 @@
     <fragment
         android:id="@+id/nav_specialoffers"
         android:name="com.garden.menagarden.ui.ofertas.OfertasFragment"
-        android:label="@string/menu_specialoffers"
+        android:label="Offers and Events"
         tools:layout="@layout/fragment_ofertas" />
 
     <fragment
@@ -127,8 +127,8 @@
         tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/detailsCocktailsFragment"
-        android:name="com.garden.menagarden.DetailsCocktailsFragment"
-        android:label="fragment_details_cocktails"
+        android:name="com.garden.menagarden.ui.cocktails.DetailsCocktailsFragment"
+        android:label="Cocktail Photo"
         tools:layout="@layout/fragment_details_cocktails" />
 
 

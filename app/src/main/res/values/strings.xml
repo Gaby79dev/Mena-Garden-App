@@ -16,25 +16,13 @@
     <string name="boton1" translatable="false">boton1</string>
     <string name="boton3" translatable="false">boton3</string>
     <string name="button4" translatable="false">boton4</string>
-    <string name="button5">boton5</string>
-    <string name="button6">boton6</string>
-    <string name="button7">boton7</string>
-    <string name="button8">boton8</string>
-    <string name="button9">boton9</string>
-    <string name="button10">boton10</string>
-    <string name="button11">boton11</string>
-    <string name="button12">boton12</string>
-    <string name="button13">boton13</string>
-    <string name="button14">boton14</string>
-    <string name="button15">boton15</string>
-    <string name="button16">boton16</string>
-    <string name="teléfono">teléfono</string>
-    <string name="email">email</string>
-    <string name="whatsapp">whatsapp</string>
-    <string name="telefono">telefonoimagen</string>
-    <string name="whatsappIcono">whatssapicon</string>
-    <string name="logoreservas">logoreservas</string>
-    <string name="logoreservas2">logoreservas2</string>
+    <string name="teléfono" translatable="false">teléfono</string>
+    <string name="email" translatable="false">email</string>
+    <string name="whatsapp" translatable="false">whatsapp</string>
+    <string name="telefono" translatable="false">telefonoimagen</string>
+    <string name="whatsappIcono" translatable="false">whatssapicon</string>
+    <string name="logoreservas" translatable="false">logoreservas</string>
+    <string name="logoreservas2" translatable="false">logoreservas2</string>
     <string name="imagenlogo" translatable="false">imagenlogo</string>
     <string name="logo" translatable="false">logo</string>
     <string name="menagarden" translatable="false">gardenmena</string>
@@ -167,7 +155,6 @@
     <string name="time">TIME</string>
     <string name="pax_number">PAX. NUMBER</string>
     <string name="observations">OBSERVATIONS</string>
-    <string name="send_by_email_or_Whatsapp" translatable="false">SEND BY EMAIL OR WHATSAPP</string>
     <string name="cocktailsbtn">Cocktails</string>
     <string name="cocktails">Cocktails</string>
     <string name="menu_reserve">Reserve</string>
@@ -179,18 +166,22 @@
     <string name="we_welcome_you_to_mena_garden_gastrobar_located_in_the_mena_hostel_typical_andalusian_house_from_the_17th_century_in_the_heart_of_nerja_calle_el_barrio_18">We welcome you to “Mena Garden”, Gastrobar, located in the Mena hostel (typical Andalusian house from the 17th century) in the heart of Nerja (Calle el Barrio 18).</string>
     <string name="mena_garden_is_the_consequence_of_a_long_term_dreamt_project_and_designed_to_finally_open_its_doors_in_july_2020">Mena Garden is the consequence of a long term dreamt project and designed to finally open its doors in July 2020.</string>
     <string name="a_haven_of_peace_where_you_can_enjoy_its_typical_andalusian_terrace_and_its_garden_area_with_fruit_trees_from_the_area_adorned_with_a_variety_of_flowers">A haven of peace, where you can enjoy its typical Andalusian terrace and its garden area, with fruit trees from the area, adorned with a variety of flowers.</string>
-    <string name="mena_garden_offers_service_throughout_the_day_starting_with_a_wide_variety_of_breakfasts_english_norwegian_eggs_benedict_a_variety_of_croissants_and_all_accompanied_by_the_best_fresh_fruit">Mena Garden offers service throughout the day, starting with a wide variety of breakfasts (English, Norwegian, Eggs Benedict, a variety of croissants ...) and all accompanied by the best fresh fruit.</string>
+    <string name="mena_garden_offers_service_throughout_the_day_starting_with_a_wide_variety_of_breakfasts_english_norwegian_eggs_benedict_a_variety_of_croissants_and_all_accompanied_by_the_best_fresh_fruit">Mena Garden offers service throughout the day, starting with a wide variety of breakfasts (English, Norwegian, Eggs Benedict, a variety of croissants …) and all accompanied by the best fresh fruit.</string>
     <string name="in_our_living_room_called_the_tulips_room_on_cold_winter_days_you_will_feel_at_home_in_the_warmth_of_the_wood_fireplace_who_can_resist_a_good_hot_tea_or_coffee_accompanied_by_a_home_made_cake">In our living room, called the Tulipsroom, on cold winter days, you will feel at home in the warmth of the wood fireplace. Who can resist a good hot tea or coffee accompanied by a home made cake?</string>
     <string name="would_you_like_a_brunch_or_lunch_well_this_is_your_place_offering_a_wide_variety_of_toasts_salads_with_the_best_fruit_and_why_not_accompany_it_with_the_best_drink_a_good_wine_or_a_cold_beer">Would you like a brunch or lunch? .... well this is your place, offering a wide variety of toasts, salads with the best fruit. And why not accompany it with the best drink?... A good wine or a cold beer!</string>
     <string name="and_more_summer_nights_will_never_be_the_same_in_nerja_come_and_enjoy_the_best_dinners_and_cocktails_in_this_magnificent_place_enjoy_the_breeze_that_the_sal_n_beach_offers_and_share_our_culinary_specialities_such_as_the_famous_mena_boom_with_your_friends_and_family">And more ..... Summer nights will never be the same in Nerja! Come and enjoy the best dinners and cocktails in this magnificent place. Enjoy the breeze that the “Salón beach” offers, and share our culinary specialities, such as the famous Mena Boom, with your friends and family.</string>
     <string name="in_the_mena_garden_app_you_will_be_able_to_see_our_entire_menu_of_meals_and_cocktails_in_addition_you_will_be_able_to_benefit_from_the_different_events_and_offers_that_will_be_published_enjoy_mena_garden_we_hope_that_your_visit_will_be_the_most_pleasant">In the Mena Garden App, you will be able to see our entire menu of meals and cocktails. In addition, you will be able to benefit from the different events and offers that will be published. Enjoy Mena Garden! We hope that your visit will be the most pleasant!</string>
     <string name="mena_garden">MENA GARDEN</string>
-    <string name="imagehome1">imagehome1</string>
-    <string name="imagehome2">imagehome2</string>
-    <string name="string_imagehome2">imagehome2</string>
-    <string name="titulo">Titulo</string>
+    <string name="cocktail_toast">Click on Image to zoom</string>
+    <string name="imagehome1" translatable="false">imagehome1</string>
+    <string name="imagehome2" translatable="false">imagehome2</string>
+    <string name="string_imagehome2" translatable="false">imagehome2</string>
+    <string name="titulo" translatable="false">Titulo</string>
     <string name="send_by_email_or_whatsapp">SEND BY EMAIL OR WHATSAPP</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="imagencockeles" translatable="false">imagencockeles</string>
+    <string name="c_el_barrio_n_18_telf_34_952520541" translatable="false">C/ El Barrio nº18 Telf. +34 952520541</string>
+    <string name="offers_and_events">Offers and Events</string>
 
 </resources>

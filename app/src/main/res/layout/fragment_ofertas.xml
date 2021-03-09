@@ -1,25 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/backgroundapp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundapp"
     tools:context=".ui.ofertas.OfertasFragment">
 
-    <com.airbnb.lottie.LottieAnimationView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/commingsoon" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="350dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="259dp"
+                        android:layout_height="286dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="32dp"
+                        android:backgroundTint="#EFDCE2"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageOffer"
+                                android:layout_width="160dp"
+                                android:layout_height="113dp"
+                                android:layout_marginStart="45dp"
+                                android:layout_marginTop="10dp"
+                                tools:src="@tools:sample/avatars" />
+
+                            <TextView
+                                android:id="@+id/textDescription"
+                                android:layout_width="238dp"
+                                android:layout_height="102dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="10dp"
+                                android:textAlignment="gravity"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic"
+                                tools:text="Description" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/cuponCode"
+                                    android:layout_width="43dp"
+                                    android:layout_height="51dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="100dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="fill_vertical"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold|italic"
+                                    tools:text="#0001" />
+
+                                <TextView
+                                    android:id="@+id/textPrice"
+                                    android:layout_width="43dp"
+                                    android:layout_height="51dp"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold|italic"
+                                    tools:text="Price" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="259dp"
+                        android:layout_height="286dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="32dp"
+                        android:backgroundTint="#EFDCE2"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageOffer2"
+                                android:layout_width="160dp"
+                                android:layout_height="113dp"
+                                android:layout_marginStart="45dp"
+                                android:layout_marginTop="10dp"
+                                tools:src="@tools:sample/avatars" />
+
+                            <TextView
+                                android:id="@+id/textDescription2"
+                                android:layout_width="238dp"
+                                android:layout_height="102dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginEnd="10dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                tools:text="Description" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/cuponCode2"
+                                    android:layout_width="43dp"
+                                    android:layout_height="51dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="100dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="fill_vertical"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold|italic"
+                                    tools:text="#0001" />
+
+                                <TextView
+                                    android:id="@+id/textPrice2"
+                                    android:layout_width="43dp"
+                                    android:layout_height="51dp"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold|italic"
+                                    tools:text="Price" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="259dp"
+                        android:layout_height="286dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="32dp"
+                        android:backgroundTint="#EFDCE2"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageOffer3"
+                                android:layout_width="160dp"
+                                android:layout_height="113dp"
+                                android:layout_marginStart="45dp"
+                                android:layout_marginTop="10dp"
+                                tools:src="@tools:sample/avatars" />
+
+                            <TextView
+                                android:id="@+id/textDescription3"
+                                android:layout_width="238dp"
+                                android:layout_height="102dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="10dp"
+                                android:textAlignment="gravity"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                tools:text="Description" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/cuponCode3"
+                                    android:layout_width="43dp"
+                                    android:layout_height="51dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="100dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="fill_vertical"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold|italic"
+                                    tools:text="#0001" />
+
+                                <TextView
+                                    android:id="@+id/textPrice3"
+                                    android:layout_width="43dp"
+                                    android:layout_height="51dp"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold|italic"
+                                    tools:text="Price" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/imageTitleEvent"
+                android:layout_width="168dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="342dp"
+                android:layout_height="182dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#EFDCE2"
+                app:cardCornerRadius="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageEvent"
+                        android:layout_width="104dp"
+                        android:layout_height="161dp"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/textEvent"
+                        android:layout_width="197dp"
+                        android:layout_height="126dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        tools:text="Prueba" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,6 @@
     <string name="time">HORA</string>
     <string name="pax_number">Nº PERSONAS</string>
     <string name="observations">OBSERVACIONES</string>
-    <string name="send_email">ENVIAR EMAIL</string>
     <string name="cocktailsbtn">Cócteles</string>
     <string name="menu_reserve">Reserva</string>
     <string name="cocktails">Cócteles</string>
@@ -32,14 +31,16 @@
     <string name="we_welcome_you_to_mena_garden_gastrobar_located_in_the_mena_hostel_typical_andalusian_house_from_the_17th_century_in_the_heart_of_nerja_calle_el_barrio_18">Les damos la bienvenida Mena Garden, \"Gastrobar\"situado en hostal Mena (casa típica andaluza del siglo XVII) en el centro de Nerja (Calle el Barrio nº18).</string>
     <string name="mena_garden_is_the_consequence_of_a_long_term_dreamt_project_and_designed_to_finally_open_its_doors_in_july_2020">" \"Mena Garden\" es la consecuencia de un proyecto soñado  y diseñado durante mucho tiempo que abrió sus puertas en Julio de 2020."</string>
     <string name="a_haven_of_peace_where_you_can_enjoy_its_typical_andalusian_terrace_and_its_garden_area_with_fruit_trees_from_the_area_adorned_with_a_variety_of_flowers">Un remanso de paz, donde disfrutar de su típica terraza andaluza y de su zona de jardín, con árboles frutales de la zona y adornado con gran variedad de flores.</string>
-    <string name="mena_garden_offers_service_throughout_the_day_starting_with_a_wide_variety_of_breakfasts_english_norwegian_eggs_benedict_a_variety_of_croissants_and_all_accompanied_by_the_best_fresh_fruit">\"Mena Garden\" ofrece servicio durante todo el día,  comenzando por una gran variedad de desayunos (inglés, noruego, huevos benedict, gran variedad de croissants...) y todo acompañado de la mejor fruta fresca.</string>
+    <string name="mena_garden_offers_service_throughout_the_day_starting_with_a_wide_variety_of_breakfasts_english_norwegian_eggs_benedict_a_variety_of_croissants_and_all_accompanied_by_the_best_fresh_fruit">\"Mena Garden\" ofrece servicio durante todo el día,  comenzando por una gran variedad de desayunos (inglés, noruego, huevos benedict, gran variedad de croissants…) y todo acompañado de la mejor fruta fresca.</string>
     <string name="in_our_living_room_called_the_tulips_room_on_cold_winter_days_you_will_feel_at_home_in_the_warmth_of_the_wood_fireplace_who_can_resist_a_good_hot_tea_or_coffee_accompanied_by_a_home_made_cake">En nuestro salón, bautizado como salón de los \"Tulipanes\", los días fríos de invierno, te sentirás como en casa al calor de la chimenea de leña. ¿Quien puede resistirse a un buen té o café caliente acompañado de un trozo de tarta casera?</string>
     <string name="would_you_like_a_brunch_or_lunch_well_this_is_your_place_offering_a_wide_variety_of_toasts_salads_with_the_best_fruit_and_why_not_accompany_it_with_the_best_drink_a_good_wine_or_a_cold_beer">"¿Te apetece un brunch o almuerzo?.... pues este es tu sitio, gran variedad de tostas, ensaladas con la mejor fruta y por que no acompañarlo por la mejor bebida ¡ Un buen vino o una cerveza fresquita ! "</string>
     <string name="and_more_summer_nights_will_never_be_the_same_in_nerja_come_and_enjoy_the_best_dinners_and_cocktails_in_this_magnificent_place_enjoy_the_breeze_that_the_sal_n_beach_offers_and_share_our_culinary_specialities_such_as_the_famous_mena_boom_with_your_friends_and_family">Y.....¡ Las noches de verano ya no volverán a ser los mismo en Nerja ! Ven a disfrutar de las mejores cenas y cócteles  en este magnífico lugar. Disfruta de la brisa que ofrece la playa del Salón y comparte con tus amigos y familiares, platos, como los famosos \"Mena Boom\".</string>
     <string name="in_the_mena_garden_app_you_will_be_able_to_see_our_entire_menu_of_meals_and_cocktails_in_addition_you_will_be_able_to_benefit_from_the_different_events_and_offers_that_will_be_published_enjoy_mena_garden_we_hope_that_your_visit_will_be_the_most_pleasant">En el App de Mena Garden, podrás ver toda nuestra carta de comidas y cócteles que se ofrecen, además, podrás beneficiarte de los distintos eventos y ofertas que se irán publicando. ¡Ahora a disfrutar de \"Mena Garden\"! Esperamos que  su visita sea de lo más agradable.</string>
     <string name="share">Compartir</string>
     <string name="action_Exit">Salir</string>
-    <string name="send_by_email_or_Whatsapp">ENVIAR POR EMAIL O WHATSAPP</string>
+    <string name="cocktail_toast">Pincha en la imagen para zoom</string>
+    <string name="offers_and_events">Ofertas y Eventos</string>
+    <string name="send_by_email_or_whatsapp">ENVIAR POR EMAIL O WHATSAPP</string>
 
 
 </resources>
