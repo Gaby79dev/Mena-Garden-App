@@ -1,4 +1,4 @@
-package com.garden.menagarden
+package com.garden.menagarden.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle

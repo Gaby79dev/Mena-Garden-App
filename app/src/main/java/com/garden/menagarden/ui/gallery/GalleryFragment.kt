@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.fragment_gallery.*
 class GalleryFragment : Fragment() {
 
 
-    private lateinit var binding: FragmentGalleryBinding
+    private  var _binding: FragmentGalleryBinding?=null
+    private val binding get() = _binding!!
 
     val db = FirebaseFirestore.getInstance() // val to get CloudFirestoreData
 
@@ -24,7 +25,7 @@ class GalleryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
 
         (activity as MainActivity).hideFloatingActionButton() // llamada al MainActivity para esconder el botón flotante
 

@@ -254,18 +254,18 @@
                     <ImageView
                         android:id="@+id/facebookbtn"
                         android:layout_weight="1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/logofacebook"
                         android:contentDescription="@string/imageFacebook" />
 
                     <ImageView
                         android:id="@+id/instagrambtn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/logoinstagram"
-                        android:contentDescription="@string/imageInstagram" />
+                        android:contentDescription="@string/imageInstagram"
+                        android:src="@drawable/logoinstagram" />
 
 
                 </LinearLayout>

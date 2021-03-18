@@ -1,4 +1,4 @@
-package com.garden.menagarden
+package com.garden.menagarden.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+
 import com.garden.menagarden.databinding.FragmentHistoriaBinding
 
 
 class HistoriaFragment : Fragment() {
 
 
-    private var _binding: FragmentHistoriaBinding?=null
+    private  var _binding: FragmentHistoriaBinding?=null
     private val binding get() = _binding!!
 
     override fun onCreateView(

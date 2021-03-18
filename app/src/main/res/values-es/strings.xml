@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="menu_Menu">Menú</string>
-    <string name="menu_specialoffers">Ofertas</string>
+    <string name="menu_specialoffers">Ofertas y Eventos</string>
     <string name="menu_reservar">Reservas</string>
     <string name="menu_gallery">Galería</string>
     <string name="menu_home">Principal</string>
@@ -37,10 +37,16 @@
     <string name="and_more_summer_nights_will_never_be_the_same_in_nerja_come_and_enjoy_the_best_dinners_and_cocktails_in_this_magnificent_place_enjoy_the_breeze_that_the_sal_n_beach_offers_and_share_our_culinary_specialities_such_as_the_famous_mena_boom_with_your_friends_and_family">Y.....¡ Las noches de verano ya no volverán a ser los mismo en Nerja ! Ven a disfrutar de las mejores cenas y cócteles  en este magnífico lugar. Disfruta de la brisa que ofrece la playa del Salón y comparte con tus amigos y familiares, platos, como los famosos \"Mena Boom\".</string>
     <string name="in_the_mena_garden_app_you_will_be_able_to_see_our_entire_menu_of_meals_and_cocktails_in_addition_you_will_be_able_to_benefit_from_the_different_events_and_offers_that_will_be_published_enjoy_mena_garden_we_hope_that_your_visit_will_be_the_most_pleasant">En el App de Mena Garden, podrás ver toda nuestra carta de comidas y cócteles que se ofrecen, además, podrás beneficiarte de los distintos eventos y ofertas que se irán publicando. ¡Ahora a disfrutar de \"Mena Garden\"! Esperamos que  su visita sea de lo más agradable.</string>
     <string name="share">Compartir</string>
-    <string name="action_Exit">Salir</string>
     <string name="cocktail_toast">Pincha en la imagen para zoom</string>
     <string name="offers_and_events">Ofertas y Eventos</string>
     <string name="send_by_email_or_whatsapp">ENVIAR POR EMAIL O WHATSAPP</string>
+    <string name="slide_to_the_left">Desliza hacia la izquierda</string>
+    <string name="rate_this_app">Califica esta App</string>
+    <string name="image1">image</string>
+    <string name="image2">image2</string>
+    <string name="image3">image3</string>
+    <string name="imageevent">imageEvent</string>
+    <string name="imagedashboard">imageDashBoard</string>
 
 
 </resources>

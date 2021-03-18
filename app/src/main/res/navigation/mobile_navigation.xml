@@ -96,18 +96,18 @@
     <fragment
         android:id="@+id/nav_specialoffers"
         android:name="com.garden.menagarden.ui.ofertas.OfertasFragment"
-        android:label="Offers and Events"
+        android:label="@string/offers_and_events"
         tools:layout="@layout/fragment_ofertas" />
 
     <fragment
         android:id="@+id/netFragment"
-        android:name="com.garden.menagarden.NetFragment"
+        android:name="com.garden.menagarden.ui.home.NetFragment"
         android:label="@string/menu_Follow_us"
         tools:layout="@layout/fragment_net" />
 
     <fragment
         android:id="@+id/nav_historiaFragment"
-        android:name="com.garden.menagarden.HistoriaFragment"
+        android:name="com.garden.menagarden.ui.home.HistoriaFragment"
         android:label="@string/nav_history"
         tools:layout="@layout/fragment_historia">
         <action
@@ -122,7 +122,7 @@
 
     <fragment
         android:id="@+id/nav_mapFragment"
-        android:name="com.garden.menagarden.MapFragment"
+        android:name="com.garden.menagarden.ui.home.MapFragment"
         android:label="Google Maps"
         tools:layout="@layout/fragment_map" />
     <fragment

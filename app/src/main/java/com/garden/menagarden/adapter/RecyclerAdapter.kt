@@ -1,10 +1,11 @@
-package com.garden.menagarden
+package com.garden.menagarden.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.garden.menagarden.R
 import com.garden.menagarden.base.BaseViewHolder
 import com.garden.menagarden.data.model.Cocktails
 import com.garden.menagarden.ui.cocktails.CocktailsFragment

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.garden.menagarden.MainActivity
 import com.garden.menagarden.R
-import com.garden.menagarden.RecyclerAdapter
+import com.garden.menagarden.adapter.RecyclerAdapter
 import com.garden.menagarden.data.model.Cocktails
 import com.garden.menagarden.databinding.FragmentCocktailsBinding
 
@@ -19,7 +19,8 @@ import com.garden.menagarden.databinding.FragmentCocktailsBinding
 class CocktailsFragment : Fragment(), RecyclerAdapter.OnCocktailsClickListener {
 
 
-    private lateinit var binding : FragmentCocktailsBinding
+    private  var _binding : FragmentCocktailsBinding?=null
+    private val binding get() =  _binding!!
 
 
     override fun onCreateView(
@@ -30,7 +31,7 @@ class CocktailsFragment : Fragment(), RecyclerAdapter.OnCocktailsClickListener {
         (activity as MainActivity).hideFloatingActionButton() // Call Main activity to hide the floating button
 
 
-        binding = FragmentCocktailsBinding.inflate(inflater,container,false)
+        _binding = FragmentCocktailsBinding.inflate(inflater,container,false)
 
 
 

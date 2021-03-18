@@ -12,8 +12,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class OfertasFragment : Fragment() {
 
-    private lateinit var binding:FragmentOfertasBinding
-
+    private  var _binding:FragmentOfertasBinding?=null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +23,7 @@ class OfertasFragment : Fragment() {
         val db = FirebaseFirestore.getInstance() // val to get CloudFirestoreData
 
 
-        binding = FragmentOfertasBinding.inflate(inflater,container,false)
+        _binding = FragmentOfertasBinding.inflate(inflater,container,false)
 
 
         //Load image Title "Eventos"

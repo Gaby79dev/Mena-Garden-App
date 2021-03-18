@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
         // botón flotante para Whatsapp
 
 
+
+
         val fab : FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener {
 
@@ -123,9 +125,11 @@ class MainActivity : AppCompatActivity() {
 
         when (item.itemId) {
 
-            R.id.action_salir -> {
+            R.id.action_rate -> {
 
-                finish()
+                val uri = Uri.parse("https://play.google.com/store/apps/details?id=com.garden.menagarden")
+                val goPlayStore = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(goPlayStore)
             }
 
             R.id.share -> {    // compartir información del App para facebook, whatsapp etc...

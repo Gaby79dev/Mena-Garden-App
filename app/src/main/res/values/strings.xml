@@ -37,7 +37,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_reservar">Reserve</string>
-    <string name="menu_specialoffers">Special offers</string>
+    <string name="menu_specialoffers">Offers and Events</string>
     <string name="menu_Menu">Menu</string>
     <string name="email_garden" translatable="false">menagardennerja@gmail.com</string>
     <string name="boton_whatsapp" translatable="false">boton_whatsapp</string>
@@ -161,7 +161,6 @@
     <string name="menu_Follow_us">Follow us!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="nav_history" translatable="false">Mena Garden</string>
-    <string name="action_Exit">Exit</string>
     <string name="share">Share</string>
     <string name="we_welcome_you_to_mena_garden_gastrobar_located_in_the_mena_hostel_typical_andalusian_house_from_the_17th_century_in_the_heart_of_nerja_calle_el_barrio_18">We welcome you to “Mena Garden”, Gastrobar, located in the Mena hostel (typical Andalusian house from the 17th century) in the heart of Nerja (Calle el Barrio 18).</string>
     <string name="mena_garden_is_the_consequence_of_a_long_term_dreamt_project_and_designed_to_finally_open_its_doors_in_july_2020">Mena Garden is the consequence of a long term dreamt project and designed to finally open its doors in July 2020.</string>
@@ -183,5 +182,12 @@
     <string name="imagencockeles" translatable="false">imagencockeles</string>
     <string name="c_el_barrio_n_18_telf_34_952520541" translatable="false">C/ El Barrio nº18 Telf. +34 952520541</string>
     <string name="offers_and_events">Offers and Events</string>
+    <string name="slide_to_the_left">Slide to the left</string>
+    <string name="rate_this_app">Rate this app</string>
+    <string name="image1">image1</string>
+    <string name="image2">image2</string>
+    <string name="image3">image3</string>
+    <string name="imageevent">imageEvent</string>
+    <string name="imagedashboard">imageDashBoard</string>
 
 </resources>

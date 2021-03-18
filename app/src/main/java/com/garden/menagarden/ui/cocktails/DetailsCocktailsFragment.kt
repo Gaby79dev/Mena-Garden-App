@@ -11,13 +11,15 @@ import com.garden.menagarden.databinding.FragmentDetailsCocktailsBinding
 
 class DetailsCocktailsFragment : Fragment() {
 
-    private lateinit var binding: FragmentDetailsCocktailsBinding
+    private var _binding: FragmentDetailsCocktailsBinding?=null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDetailsCocktailsBinding.inflate(inflater, container, false)
+
+        _binding = FragmentDetailsCocktailsBinding.inflate(inflater, container, false)
 
 
        // Bundle of cocktail image

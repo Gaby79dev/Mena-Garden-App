@@ -1,4 +1,4 @@
-package com.garden.menagarden
+package com.garden.menagarden.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,7 +12,7 @@ import com.garden.menagarden.databinding.FragmentNetBinding
 
 class NetFragment : Fragment() {
 
-    private var _binding:FragmentNetBinding?=null
+    private var _binding: FragmentNetBinding?=null
     private val binding get() = _binding!!
 
 

@@ -18,7 +18,8 @@ import com.garden.menagarden.databinding.FragmentReservasBinding
 class ReservasFragment : Fragment() {
 
 
-    private lateinit var binding: FragmentReservasBinding
+    private  var _binding: FragmentReservasBinding?=null
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -28,7 +29,7 @@ class ReservasFragment : Fragment() {
     ): View {
 
 
-        binding = FragmentReservasBinding.inflate(inflater, container, false)
+        _binding = FragmentReservasBinding.inflate(inflater, container, false)
 
 
         (activity as MainActivity).hideFloatingActionButton() // llamada al MainActivity para esconder el botón flotante
