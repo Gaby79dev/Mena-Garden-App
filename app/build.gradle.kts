@@ -1,0 +1,107 @@
+import org.gradle.api.JavaVersion // For JavaVersion.VERSION_1_8
+
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    // kotlin-android-extensions is removed as per instructions
+    id("com.google.gms.google-services")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt") // For kapt dependencies
+    id("dagger.hilt.android.plugin")
+}
+
+android {
+    compileSdk = 30
+    buildToolsVersion = "30.0.3"
+
+    defaultConfig {
+        applicationId = "com.garden.menagarden"
+        minSdk = 21
+        targetSdk = 30
+        versionCode = 5
+        versionName = "1.1"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        getByName("release") { // Use getByName to configure existing build types
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+// Top-level kapt configuration
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    val kotlinVersion = rootProject.extra["kotlin_version"] as String // Retrieve once
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
+
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
+
+    // Dagger
+    kapt("com.google.dagger:dagger-compiler:2.28")
+    implementation("com.google.dagger:dagger:2.31")
+    implementation("com.google.dagger:hilt-android:2.31-alpha")
+    kapt("com.google.dagger:hilt-android-compiler:2.28-alpha")
+    // annotationProcessor is replaced by kapt for Kotlin projects
+    kapt("androidx.hilt:hilt-compiler:1.0.0-beta01") // Changed from annotationProcessor
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    // Duplicated kapt 'androidx.hilt:hilt-compiler:1.0.0-beta01' - keep one (already kept above)
+
+    implementation("androidx.core:core-ktx:1.3.2")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.3.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.4")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.4")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.0")
+    implementation("com.airbnb.android:lottie:3.5.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0")
+    // Duplicated navigation dependencies - removed
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("com.google.android.gms:play-services-maps:17.0.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.gridlayout:gridlayout:1.0.0")
+
+   // Firebase
+    implementation("com.google.firebase:firebase-firestore:22.1.1")
+    implementation("com.google.firebase:firebase-database-ktx:19.7.0")
+    implementation(platform("com.google.firebase:firebase-bom:26.2.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    // implementation("com.google.firebase:firebase-analytics:18.0.2") // Covered by ktx and bom
+    implementation("com.google.firebase:firebase-messaging:21.0.1")
+    implementation("com.google.firebase:firebase-inappmessaging-display:19.1.5")
+    // implementation("com.google.firebase:firebase-core:18.0.2") // Covered by other firebase deps
+
+    // ViewPager2
+    // implementation("androidx.viewpager2:viewpager2:1.0.0") // Duplicated, already listed under Glide
+    implementation("me.relex:circleindicator:2.1.4")
+
+    // PhotoView library
+    implementation("com.github.chrisbanes:PhotoView:2.3.0")
+
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+}
