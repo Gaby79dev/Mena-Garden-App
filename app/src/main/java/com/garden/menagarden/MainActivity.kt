@@ -11,21 +11,23 @@ import androidx.navigation.compose.rememberNavController
 import com.garden.menagarden.ui.landing.LandingScreen
 import com.garden.menagarden.ui.menu.MenuScreen
 import com.garden.menagarden.ui.theme.MenaGardenTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             MenaGardenTheme {
-                MenaGardenApp()
+                MenaGardenNavHost()
             }
         }
     }
 }
 
 @Composable
-fun MenaGardenApp() {
+fun MenaGardenNavHost() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "landing") {
         composable("landing") {

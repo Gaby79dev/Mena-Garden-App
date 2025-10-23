@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "34650877515",
+    "project_id": "mena-garden-2c4ce",
+    "storage_bucket": "mena-garden-2c4ce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34650877515:android:bfda2585b2e170da13e7ce",
+        "android_client_info": {
+          "package_name": "com.garden.menagarden"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5ZREgWaz4exBwHY1_cBTnIlKcdQRWEZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

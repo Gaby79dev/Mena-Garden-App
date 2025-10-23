@@ -1,15 +1,22 @@
 package com.garden.menagarden.ui.menu
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddShoppingCart
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.RestaurantMenu
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,77 +26,87 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.rememberAsyncImagePainter
+import com.garden.menagarden.data.model.Category
+import com.garden.menagarden.data.model.MenuItem
+import androidx.compose.material3.PrimaryTabRow
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRowDefaults.PrimaryIndicator
 
+// These can be moved to a Theme file later
 val PrimaryColor = Color(0xFF38e07b)
 val BackgroundDark = Color(0xFF122017)
 val CardBackgroundColor = Color(0xFF1c2620)
 val TextColor = Color.White
 val TextColorSecondary = Color.White.copy(alpha = 0.7f)
 
-data class MenuItem(
-    val name: String,
-    val description: String,
-    val price: String,
-    val imageUrl: String
-)
-
-val menuItems = listOf(
-    MenuItem(
-        "Ensalada de queso de cabra",
-        "Una refrescante combinación de lechugas, queso de cabra caramelizado, nueces y vinagreta de miel.",
-        "12.50€",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCGc50FWMPzo9BdACtGI7mpuFTs2ypHVHTtK1BF-CqiDofcyp7nJS33-q7sN1NeR9GZ841kTehA8pUNqV1rkvO990sujbTuEMXY0c3tYw0_4npuUEgBI1q8c4atzCj1nuS1imtCVL-lZQSr6Lgf9lTu4BeW0c-IuTuuheZ5b40lSjksFC-2WzFo8HpWMt8kXHo4z8krTrPEMASNgUfoVMucJ4ce07niCv9ir91d_j78Fvj2qmFfbzEhJ4URJeStBBngtVM6mHjfyOg"
-    ),
-    MenuItem(
-        "Croquetas de Jamón Ibérico",
-        "Cremosas y crujientes, elaboradas con la receta tradicional de la abuela.",
-        "9.00€",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBwWfa8jXktrkppw9P0fqM2QpxNCK8RlP13VHRwL3g_EcTdAvhin6L-oybLLCh0FFnX7qwO5mChQzQuLmV2QdlFslD2vtGyf78jvMVoNabUSxR31XjeEriDw8h_QsYanYdwvawtQ3ZfpXExWy_r_F_VTCQiH7IP1yxw0YB5KgdC_U49JDIki9-ngNWWeXn8-WqQ2LJwsOn-DG8xYy7DIK9fTJBM7mWl9iGdmYIGYQc0qJ56LHlZVAP-Kv8_MSinz0MFrhWn0U3795Q"
-    ),
-    MenuItem(
-        "Pulpo a la Brasa",
-        "Tierno pulpo a la brasa con puré de patata trufado y pimentón de la Vera.",
-        "18.50€",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuC1rHN5X0PLsFXDJVPyJTD_bfEWITySFXV6KAol8-e_AJh8m-s4AmXDsA2kAibPEKRU6wIvCUnEYADUVrJCFGR2cuPg_NP0rnC_Nt3ySTCyMzeOAPXH2Goze1PuPnEuFBmIIBeZzCrzrlaeSSC7nphxmhkldfAKsRRLOKSecEgsjurZc7rWql3v-KKxexutskhIf2r-ve-qh4JDDHuLIwrDqlxsLU7Wzq8J0et22Ob5oGZBkmsqLigAQpbPgLeigLEsRPn-N8OCdJE"
-    )
-)
-
-val categories = listOf("Entrantes", "Principales", "Postres", "Bebidas", "Cócteles")
-
 @Composable
-fun MenuScreen() {
-    var selectedCategory by remember { mutableStateOf(categories.first()) }
+fun MenuScreen(menuViewModel: MenuViewModel = hiltViewModel()) {
+    val categories by menuViewModel.categories.collectAsStateWithLifecycle()
+    val menuItems by menuViewModel.menuItems.collectAsStateWithLifecycle()
+    val isLoading by menuViewModel.isLoading.collectAsStateWithLifecycle()
+    var selectedCategory by remember { mutableStateOf<Category?>(null) }
+    var searchQuery by remember { mutableStateOf("") }
+    var isSearchActive by remember { mutableStateOf(false) }
+
+    // Automatically select the first category when the list is loaded and none is selected
+    LaunchedEffect(categories) {
+        if (categories.isNotEmpty() && selectedCategory == null) {
+            selectedCategory = categories.first()
+        }
+    }
 
     Scaffold(
-        topBar = { MenuTopAppBar() },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = { /* TODO: Open shopping cart */ },
-                containerColor = PrimaryColor,
-                contentColor = BackgroundDark
-            ) {
-                Icon(Icons.Filled.ShoppingCart, contentDescription = "Carrito de compras")
-            }
+        topBar = {
+            MenuTopAppBar(
+                isSearchActive = isSearchActive,
+                searchQuery = searchQuery,
+                onSearchQueryChange = { searchQuery = it },
+                onToggleSearch = {
+                    isSearchActive = !isSearchActive
+                    if (!isSearchActive) {
+                        searchQuery = ""
+                    }
+                }
+            )
         },
         containerColor = BackgroundDark
     ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)) {
-            MenuCategoryTabs(
-                categories = categories,
-                selectedCategory = selectedCategory,
-                onCategorySelected = { selectedCategory = it }
-            )
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                items(menuItems) { item ->
-                    MenuItemCard(item = item)
+            if (isLoading && categories.isEmpty()) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator(color = PrimaryColor)
+                }
+            } else {
+                if (!isSearchActive) {
+                    MenuCategoryTabs(
+                        categories = categories,
+                        selectedCategory = selectedCategory,
+                        onCategorySelected = { selectedCategory = it }
+                    )
+                }
+
+                val itemsToDisplay = if (isSearchActive) {
+                    menuItems.values.flatten().filter {
+                        it.name.contains(searchQuery, ignoreCase = true) ||
+                                it.description.contains(searchQuery, ignoreCase = true)
+                    }
+                } else {
+                    selectedCategory?.let { menuItems[it.name] } ?: emptyList()
+                }
+
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    items(itemsToDisplay) { item ->
+                        MenuItemCard(item = item)
+                    }
                 }
             }
         }
@@ -98,30 +115,56 @@ fun MenuScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MenuTopAppBar() {
+fun MenuTopAppBar(
+    isSearchActive: Boolean,
+    searchQuery: String,
+    onSearchQueryChange: (String) -> Unit,
+    onToggleSearch: () -> Unit
+) {
     TopAppBar(
         title = {
-            Text(
-                text = "Mena Garden Nerja",
-                modifier = Modifier.fillMaxWidth(),
-                textAlign = TextAlign.Center,
-                color = TextColor,
-                fontWeight = FontWeight.Bold
-            )
+            if (isSearchActive) {
+                TextField(
+                    value = searchQuery,
+                    onValueChange = onSearchQueryChange,
+                    placeholder = { Text("Search menu...") },
+                    colors = TextFieldDefaults.colors(
+                        focusedContainerColor = Color.Transparent,
+                        unfocusedContainerColor = Color.Transparent,
+                        disabledContainerColor = Color.Transparent,
+                        focusedIndicatorColor = PrimaryColor,
+                        unfocusedIndicatorColor = TextColorSecondary,
+                        cursorColor = PrimaryColor,
+                        focusedTextColor = TextColor,
+                        unfocusedTextColor = TextColor,
+                    ),
+                    modifier = Modifier.fillMaxWidth()
+                )
+            } else {
+                Text(
+                    text = "Mena Garden Nerja",
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    color = TextColor,
+                    fontWeight = FontWeight.Bold
+                )
+            }
         },
         navigationIcon = {
-            Icon(
-                imageVector = Icons.Filled.RestaurantMenu,
-                contentDescription = "Menú",
-                tint = TextColor,
-                modifier = Modifier.padding(start = 16.dp)
-            )
+            if (!isSearchActive) {
+                Icon(
+                    imageVector = Icons.Default.RestaurantMenu,
+                    contentDescription = "Menu Icon",
+                    tint = TextColor,
+                    modifier = Modifier.padding(start = 16.dp)
+                )
+            }
         },
         actions = {
-            IconButton(onClick = { /* TODO: Implement search */ }) {
+            IconButton(onClick = onToggleSearch) {
                 Icon(
-                    imageVector = Icons.Filled.Search,
-                    contentDescription = "Buscar",
+                    imageVector = if (isSearchActive) Icons.Default.Close else Icons.Default.Search,
+                    contentDescription = if (isSearchActive) "Close search" else "Search",
                     tint = TextColor
                 )
             }
@@ -134,32 +177,33 @@ fun MenuTopAppBar() {
 
 @Composable
 fun MenuCategoryTabs(
-    categories: List<String>,
-    selectedCategory: String,
-    onCategorySelected: (String) -> Unit
+    categories: List<Category>,
+    selectedCategory: Category?,
+    onCategorySelected: (Category) -> Unit
 ) {
-    PrimaryTabRow(
-        selectedTabIndex = categories.indexOf(selectedCategory),
-        containerColor = BackgroundDark,
-        contentColor = PrimaryColor,
-        indicator = {
-            TabRowDefaults.PrimaryIndicator(
-                modifier = Modifier.tabIndicatorOffset(categories.indexOf(selectedCategory)),
-                color = PrimaryColor
-            )
-        }
-    ) {
-        categories.forEach { category ->
-            Tab(
-                selected = category == selectedCategory,
-                onClick = { onCategorySelected(category) },
-                text = {
-                    Text(
-                        text = category,
-                        color = if (category == selectedCategory) PrimaryColor else TextColorSecondary
-                    )
-                }
-            )
+    if (categories.isNotEmpty()) {
+        val selectedIndex = categories.indexOf(selectedCategory).coerceAtLeast(0)
+
+        PrimaryTabRow(
+            selectedTabIndex = selectedIndex,
+            containerColor = BackgroundDark,
+            indicator = {
+                PrimaryIndicator(
+                    color = PrimaryColor
+                )
+            }
+        ) {
+            categories.forEach { category ->
+                Tab(
+                    selected = category == selectedCategory,
+                    onClick = { onCategorySelected(category) },
+                    text = {
+                        Text(text = category.name)
+                    },
+                    selectedContentColor = PrimaryColor,
+                    unselectedContentColor = TextColorSecondary
+                )
+            }
         }
     }
 }
@@ -172,44 +216,30 @@ fun MenuItemCard(item: MenuItem) {
         colors = CardDefaults.cardColors(containerColor = CardBackgroundColor)
     ) {
         Column {
-            Image(
-                painter = rememberAsyncImagePainter(item.imageUrl),
-                contentDescription = item.name,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(180.dp)
-                    .clip(RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp)),
-                contentScale = ContentScale.Crop
-            )
+            if (item.imageUrl != null) {
+                Image(
+                    painter = rememberAsyncImagePainter(item.imageUrl),
+                    contentDescription = item.name,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(180.dp)
+                        .clip(RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp)),
+                    contentScale = ContentScale.Crop
+                )
+            }
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(text = item.name, color = TextColor, fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(text = item.description, color = TextColorSecondary, fontSize = 14.sp)
                 Spacer(modifier = Modifier.height(8.dp))
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(text = item.price, color = PrimaryColor, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                    Button(
-                        onClick = { /* TODO: Add to cart */ },
-                        colors = ButtonDefaults.buttonColors(containerColor = PrimaryColor),
-                        shape = RoundedCornerShape(8.dp),
-                        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
-                    ) {
-                        Icon(Icons.Filled.AddShoppingCart, contentDescription = "Añadir al carrito", tint = BackgroundDark)
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text("Añadir", color = BackgroundDark)
-                    }
-                }
+                Text(
+                    text = "%.2f€".format(item.price),
+                    color = PrimaryColor,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.align(Alignment.End)
+                )
             }
         }
     }
-}
-
-@Preview(showBackground = true, backgroundColor = 0xFF122017)
-@Composable
-fun MenuScreenPreview() {
-    MenuScreen()
 }

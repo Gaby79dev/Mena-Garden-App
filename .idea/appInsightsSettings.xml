@@ -22,10 +22,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.garden.menagarden" />
+                  <option name="mobileSdkAppId" value="1:34650877515:android:bfda2585b2e170da13e7ce" />
+                  <option name="projectId" value="mena-garden-2c4ce" />
+                  <option name="projectNumber" value="34650877515" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
