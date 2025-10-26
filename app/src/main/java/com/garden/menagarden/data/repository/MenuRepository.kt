@@ -1,10 +1,7 @@
 package com.garden.menagarden.data.repository
 
-import com.garden.menagarden.data.model.Category
-import com.garden.menagarden.data.model.MenuItem
-
+import com.garden.menagarden.data.model.Menu
 
 interface MenuRepository {
-    suspend fun getCategories(): List<Category>
-    suspend fun getMenuItems(): Map<String, List<MenuItem>>
+    suspend fun getMenu(): Menu
 }

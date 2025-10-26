@@ -2,8 +2,7 @@ package com.garden.menagarden.ui.menu
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.garden.menagarden.data.model.Category
-import com.garden.menagarden.data.model.MenuItem
+import com.garden.menagarden.data.model.Menu
 import com.garden.menagarden.data.repository.MenuRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,11 +15,8 @@ class MenuViewModel @Inject constructor(
     private val menuRepository: MenuRepository
 ) : ViewModel() {
 
-    private val _categories = MutableStateFlow<List<Category>>(emptyList())
-    val categories: StateFlow<List<Category>> = _categories
-
-    private val _menuItems = MutableStateFlow<Map<String, List<MenuItem>>>(emptyMap())
-    val menuItems: StateFlow<Map<String, List<MenuItem>>> = _menuItems
+    private val _menu = MutableStateFlow<Menu?>(null)
+    val menu: StateFlow<Menu?> = _menu
 
     private val _isLoading = MutableStateFlow(true)
     val isLoading: StateFlow<Boolean> = _isLoading
@@ -33,15 +29,10 @@ class MenuViewModel @Inject constructor(
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                // Fetch categories and items using the repository
-                val categoryList = menuRepository.getCategories()
-                _categories.value = categoryList
-
-                val menuItemMap = menuRepository.getMenuItems()
-                _menuItems.value = menuItemMap
-
+                _menu.value = menuRepository.getMenu()
             } catch (e: Exception) {
                 // Handle exceptions, e.g., logging or showing an error state
+                 _menu.value = null // Or some error state
             } finally {
                 _isLoading.value = false
             }

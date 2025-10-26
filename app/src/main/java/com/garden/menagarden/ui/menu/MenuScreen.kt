@@ -1,6 +1,6 @@
 package com.garden.menagarden.ui.menu
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,26 +18,19 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.RestaurantMenu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil.compose.rememberAsyncImagePainter
-import com.garden.menagarden.data.model.Category
 import com.garden.menagarden.data.model.MenuItem
-import androidx.compose.material3.PrimaryTabRow
-import androidx.compose.material3.Tab
-import androidx.compose.material3.TabRowDefaults.PrimaryIndicator
 
-// These can be moved to a Theme file later
 val PrimaryColor = Color(0xFF38e07b)
 val BackgroundDark = Color(0xFF122017)
 val CardBackgroundColor = Color(0xFF1c2620)
@@ -46,14 +39,32 @@ val TextColorSecondary = Color.White.copy(alpha = 0.7f)
 
 @Composable
 fun MenuScreen(menuViewModel: MenuViewModel = hiltViewModel()) {
-    val categories by menuViewModel.categories.collectAsStateWithLifecycle()
-    val menuItems by menuViewModel.menuItems.collectAsStateWithLifecycle()
+    val menu by menuViewModel.menu.collectAsStateWithLifecycle()
     val isLoading by menuViewModel.isLoading.collectAsStateWithLifecycle()
-    var selectedCategory by remember { mutableStateOf<Category?>(null) }
+
+    val menuByCategory = remember(menu) {
+        menu?.let {
+            linkedMapOf<String, List<MenuItem>>().apply {
+                if (it.bebidas.refrescos.isNotEmpty()) put("Refrescos", it.bebidas.refrescos.values.toList())
+                if (it.bebidas.cervezas.isNotEmpty()) put("Cervezas", it.bebidas.cervezas.values.toList())
+                if (it.bebidas.vinosCavas.isNotEmpty()) put("Vinos y Cavas", it.bebidas.vinosCavas.values.toList())
+                if (it.bebidas.cocktails.isNotEmpty()) put("Cocktails", it.bebidas.cocktails.values.toList())
+                if (it.bebidas.vodka.isNotEmpty()) put("Vodka", it.bebidas.vodka.values.toList())
+                if (it.bebidas.gin.isNotEmpty()) put("Gin", it.bebidas.gin.values.toList())
+                if (it.bebidas.ron.isNotEmpty()) put("Ron", it.bebidas.ron.values.toList())
+                if (it.bebidas.whisky.isNotEmpty()) put("Whisky", it.bebidas.whisky.values.toList())
+                if (it.bebidas.cafeInfusiones.isNotEmpty()) put("Café e Infusiones", it.bebidas.cafeInfusiones.values.toList())
+                if (it.comidas.desayunos.isNotEmpty()) put("Desayunos", it.comidas.desayunos.values.toList())
+            }
+        } ?: emptyMap()
+    }
+
+    val categories = remember(menuByCategory) { menuByCategory.keys.toList() }
+
+    var selectedCategory by remember { mutableStateOf<String?>(null) }
     var searchQuery by remember { mutableStateOf("") }
     var isSearchActive by remember { mutableStateOf(false) }
 
-    // Automatically select the first category when the list is loaded and none is selected
     LaunchedEffect(categories) {
         if (categories.isNotEmpty() && selectedCategory == null) {
             selectedCategory = categories.first()
@@ -91,12 +102,12 @@ fun MenuScreen(menuViewModel: MenuViewModel = hiltViewModel()) {
                 }
 
                 val itemsToDisplay = if (isSearchActive) {
-                    menuItems.values.flatten().filter {
-                        it.name.contains(searchQuery, ignoreCase = true) ||
-                                it.description.contains(searchQuery, ignoreCase = true)
+                    menuByCategory.values.flatten().filter {
+                        it.nombre.contains(searchQuery, ignoreCase = true) ||
+                                (it.descripcion?.contains(searchQuery, ignoreCase = true) == true)
                     }
                 } else {
-                    selectedCategory?.let { menuItems[it.name] } ?: emptyList()
+                    selectedCategory?.let { menuByCategory[it] } ?: emptyList()
                 }
 
                 LazyColumn(
@@ -127,7 +138,7 @@ fun MenuTopAppBar(
                 TextField(
                     value = searchQuery,
                     onValueChange = onSearchQueryChange,
-                    placeholder = { Text("Search menu...") },
+                    placeholder = { Text("Buscar en el menú...") },
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.Transparent,
                         unfocusedContainerColor = Color.Transparent,
@@ -164,7 +175,7 @@ fun MenuTopAppBar(
             IconButton(onClick = onToggleSearch) {
                 Icon(
                     imageVector = if (isSearchActive) Icons.Default.Close else Icons.Default.Search,
-                    contentDescription = if (isSearchActive) "Close search" else "Search",
+                    contentDescription = if (isSearchActive) "Cerrar búsqueda" else "Buscar",
                     tint = TextColor
                 )
             }
@@ -177,29 +188,30 @@ fun MenuTopAppBar(
 
 @Composable
 fun MenuCategoryTabs(
-    categories: List<Category>,
-    selectedCategory: Category?,
-    onCategorySelected: (Category) -> Unit
+    categories: List<String>,
+    selectedCategory: String?,
+    onCategorySelected: (String) -> Unit
 ) {
     if (categories.isNotEmpty()) {
-        val selectedIndex = categories.indexOf(selectedCategory).coerceAtLeast(0)
+        val selectedIndex = categories.indexOf(selectedCategory).coerceIn(0, categories.size - 1)
 
-        PrimaryTabRow(
+        TabRow(
             selectedTabIndex = selectedIndex,
             containerColor = BackgroundDark,
-            indicator = {
-                PrimaryIndicator(
-                    color = PrimaryColor
-                )
+            indicator = { tabPositions ->
+                if (selectedIndex < tabPositions.size) {
+                    TabRowDefaults.Indicator(
+                        Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
+                        color = PrimaryColor
+                    )
+                }
             }
         ) {
             categories.forEach { category ->
                 Tab(
                     selected = category == selectedCategory,
                     onClick = { onCategorySelected(category) },
-                    text = {
-                        Text(text = category.name)
-                    },
+                    text = { Text(text = category) },
                     selectedContentColor = PrimaryColor,
                     unselectedContentColor = TextColorSecondary
                 )
@@ -215,31 +227,20 @@ fun MenuItemCard(item: MenuItem) {
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = CardBackgroundColor)
     ) {
-        Column {
-            if (item.imageUrl != null) {
-                Image(
-                    painter = rememberAsyncImagePainter(item.imageUrl),
-                    contentDescription = item.name,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(180.dp)
-                        .clip(RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp)),
-                    contentScale = ContentScale.Crop
-                )
-            }
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(text = item.name, color = TextColor, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(text = item.nombre, color = TextColor, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            if (!item.descripcion.isNullOrEmpty()) {
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(text = item.description, color = TextColorSecondary, fontSize = 14.sp)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "%.2f€".format(item.price),
-                    color = PrimaryColor,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.align(Alignment.End)
-                )
+                Text(text = item.descripcion, color = TextColorSecondary, fontSize = 14.sp)
             }
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "%.2f€".format(item.precio),
+                color = PrimaryColor,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.End)
+            )
         }
     }
 }
