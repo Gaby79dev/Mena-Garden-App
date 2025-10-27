@@ -38,22 +38,13 @@ val TextColor = Color.White
 val TextColorSecondary = Color.White.copy(alpha = 0.7f)
 
 @Composable
-fun MenuScreen(menuViewModel: MenuViewModel = hiltViewModel()) {
+fun FoodMenuScreen(menuViewModel: MenuViewModel = hiltViewModel()) {
     val menu by menuViewModel.menu.collectAsStateWithLifecycle()
     val isLoading by menuViewModel.isLoading.collectAsStateWithLifecycle()
 
     val menuByCategory = remember(menu) {
         menu?.let {
             linkedMapOf<String, List<MenuItem>>().apply {
-                if (it.bebidas.refrescos.isNotEmpty()) put("Refrescos", it.bebidas.refrescos.values.toList())
-                if (it.bebidas.cervezas.isNotEmpty()) put("Cervezas", it.bebidas.cervezas.values.toList())
-                if (it.bebidas.vinosCavas.isNotEmpty()) put("Vinos y Cavas", it.bebidas.vinosCavas.values.toList())
-                if (it.bebidas.cocktails.isNotEmpty()) put("Cocktails", it.bebidas.cocktails.values.toList())
-                if (it.bebidas.vodka.isNotEmpty()) put("Vodka", it.bebidas.vodka.values.toList())
-                if (it.bebidas.gin.isNotEmpty()) put("Gin", it.bebidas.gin.values.toList())
-                if (it.bebidas.ron.isNotEmpty()) put("Ron", it.bebidas.ron.values.toList())
-                if (it.bebidas.whisky.isNotEmpty()) put("Whisky", it.bebidas.whisky.values.toList())
-                if (it.bebidas.cafeInfusiones.isNotEmpty()) put("Café e Infusiones", it.bebidas.cafeInfusiones.values.toList())
                 if (it.comidas.desayunos.isNotEmpty()) put("Desayunos", it.comidas.desayunos.values.toList())
             }
         } ?: emptyMap()
@@ -195,16 +186,14 @@ fun MenuCategoryTabs(
     if (categories.isNotEmpty()) {
         val selectedIndex = categories.indexOf(selectedCategory).coerceIn(0, categories.size - 1)
 
-        TabRow(
+        PrimaryTabRow(
             selectedTabIndex = selectedIndex,
             containerColor = BackgroundDark,
-            indicator = { tabPositions ->
-                if (selectedIndex < tabPositions.size) {
-                    TabRowDefaults.Indicator(
-                        Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
-                        color = PrimaryColor
-                    )
-                }
+            indicator = {
+                TabRowDefaults.PrimaryIndicator(
+                    modifier = Modifier.tabIndicatorOffset(selectedIndex),
+                    color = PrimaryColor
+                )
             }
         ) {
             categories.forEach { category ->

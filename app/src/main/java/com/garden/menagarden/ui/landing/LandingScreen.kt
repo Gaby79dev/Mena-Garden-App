@@ -87,7 +87,7 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("menu") },
+                onClick = { navController.navigate("menu?selectedTab=Comida") },
                 colors = ButtonDefaults.buttonColors(containerColor = primaryColor),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -102,7 +102,7 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { /* TODO */ },
+                onClick = { navController.navigate("menu?selectedTab=Bebidas") },
                 colors = ButtonDefaults.buttonColors(containerColor = primaryColor),
                 modifier = Modifier
                     .fillMaxWidth()

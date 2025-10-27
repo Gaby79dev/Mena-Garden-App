@@ -16,6 +16,6 @@ object FirebaseModule {
     @Provides
     @Singleton
     fun provideDatabase(): FirebaseDatabase {
-        return Firebase.database
+        return Firebase.database("https://mena-garden-2c4ce-default-rtdb.europe-west1.firebasedatabase.app")
     }
 }
