@@ -72,7 +72,7 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             )
             Spacer(modifier = Modifier.height(32.dp))
             Button(
-                onClick = { /* TODO */ },
+                onClick = { navController.navigate("history") },
                 colors = ButtonDefaults.buttonColors(containerColor = primaryColor),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -117,7 +117,7 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { /* TODO */ },
+                onClick = { navController.navigate("contact") },
                 colors = ButtonDefaults.buttonColors(containerColor = primaryColor),
                 modifier = Modifier
                     .fillMaxWidth()

@@ -10,7 +10,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.garden.menagarden.ui.contact.ContactScreen
 import com.garden.menagarden.ui.landing.LandingScreen
+import com.garden.menagarden.ui.landing.OurHistoryScreen
 import com.garden.menagarden.ui.menu.MenuTabs
 import com.garden.menagarden.ui.theme.MenaGardenTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,6 +37,12 @@ fun MenaGardenNavHost() {
         composable("landing") {
             LandingScreen(navController = navController)
         }
+        composable("history") {
+            OurHistoryScreen(navController = navController)
+        }
+        composable("contact") {
+            ContactScreen(navController = navController)
+        }
         composable(
             route = "menu?selectedTab={selectedTab}",
             arguments = listOf(navArgument("selectedTab") {
@@ -43,7 +51,7 @@ fun MenaGardenNavHost() {
             })
         ) { backStackEntry ->
             val selectedTab = backStackEntry.arguments?.getString("selectedTab")
-            MenuTabs(selectedTab=selectedTab)
+            MenuTabs(selectedTab = selectedTab)
         }
     }
 }
