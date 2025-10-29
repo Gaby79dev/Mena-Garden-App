@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">Mena Garden</string>
+
+    <!-- Menu Tabs -->
+    <string name="tab_food">Comida</string>
+    <string name="tab_drinks">Bebidas</string>
+
+    <!-- Landing Screen -->
+    <string name="landing_welcome_to">Bienvenido a</string>
+    <string name="landing_brand_name">Mena Garden Nerja</string>
+    <string name="landing_button_history">Nuestra Historia</string>
+    <string name="landing_button_food_menu">Carta de Comidas</string>
+    <string name="landing_button_drinks_menu">Carta de Bebidas</string>
+    <string name="landing_button_contact">Contacto y Localización</string>
+
+    <!-- History Screen -->
+    <string name="history_title">Nuestra Historia</string>
+    <string name="history_back_button_desc">Volver</string>
+    <string name="history_header">Mena Garden: Historia y Tradición en el Corazón de Nerja</string>
+    <string name="history_paragraph_1">Mena Garden no es solo un restaurante, es un lugar con una profunda historia arraigada en la tradición de Nerja.</string>
+    <string name="history_paragraph_2">Nuestro establecimiento se levanta sobre las bases del legendario Hostal Mena (o Pensión Mena), un referente turístico que fue pionero en la comarca con más de 50 años de actividad. El hostal ocupó un edificio que data del siglo XVIII (1700), una joya arquitectónica de esencia andaluza.</string>
+    <string name="history_paragraph_3">El elemento más distintivo, que hoy da nombre a nuestro local, era su extraordinario entorno: más de 1.000 m² de exóticos jardines que se asomaban al acantilado, ofreciendo un oasis de paz en el centro del pueblo.</string>
+    <string name="history_paragraph_4">Hoy, hemos transformado esta rica herencia en un espacio moderno, conservando la autenticidad y el espíritu andaluz, y manteniendo vivo ese jardín tranquilo.</string>
+    <string name="history_paragraph_5">Al visitarnos, no solo disfrutarás de la mejor gastronomía en la Calle El Barrio, sino que te conectarás con una parte esencial y con solera de la historia turística de Nerja.</string>
+
+    <!-- Contact Screen -->
+    <string name="contact_title">Contacto y Localización</string>
+    <string name="contact_back_button_desc">Volver</string>
+    <string name="contact_location_header">Nuestra Ubicación</string>
+    <string name="contact_open_maps_button">Abrir en Google Maps</string>
+    <string name="contact_call_us_header">Llámanos</string>
+    <string name="contact_call_now_button">Llamar ahora</string>
 </resources>

@@ -13,11 +13,13 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.garden.menagarden.R
 import com.garden.menagarden.ui.menu.BackgroundDark
 import com.garden.menagarden.ui.menu.PrimaryColor
 import com.garden.menagarden.ui.menu.TextColor
@@ -29,12 +31,12 @@ fun OurHistoryScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Nuestra Historia", color = TextColor) },
+                title = { Text(stringResource(id = R.string.history_title), color = TextColor) },
                 navigationIcon = {
                     IconButton(onClick = { navController.navigateUp() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Volver",
+                            contentDescription = stringResource(id = R.string.history_back_button_desc),
                             tint = TextColor
                         )
                     }
@@ -54,7 +56,7 @@ fun OurHistoryScreen(navController: NavController) {
                 .verticalScroll(rememberScrollState())
         ) {
             Text(
-                text = "Mena Garden: Historia y Tradición en el Corazón de Nerja",
+                text = stringResource(id = R.string.history_header),
                 color = PrimaryColor,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -63,35 +65,35 @@ fun OurHistoryScreen(navController: NavController) {
             )
             Spacer(modifier = Modifier.height(24.dp))
             Text(
-                text = "Mena Garden no es solo un restaurante, es un lugar con una profunda historia arraigada en la tradición de Nerja.",
+                text = stringResource(id = R.string.history_paragraph_1),
                 color = TextColor,
                 fontSize = 16.sp,
                 textAlign = TextAlign.Justify
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Nuestro establecimiento se levanta sobre las bases del legendario Hostal Mena (o Pensión Mena), un referente turístico que fue pionero en la comarca con más de 50 años de actividad. El hostal ocupó un edificio que data del siglo XVIII (1700), una joya arquitectónica de esencia andaluza.",
+                text = stringResource(id = R.string.history_paragraph_2),
                 color = TextColorSecondary,
                 fontSize = 16.sp,
                 textAlign = TextAlign.Justify
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "El elemento más distintivo, que hoy da nombre a nuestro local, era su extraordinario entorno: más de 1.000 m² de exóticos jardines que se asomaban al acantilado, ofreciendo un oasis de paz en el centro del pueblo.",
+                text = stringResource(id = R.string.history_paragraph_3),
                 color = TextColorSecondary,
                 fontSize = 16.sp,
                 textAlign = TextAlign.Justify
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Hoy, hemos transformado esta rica herencia en un espacio moderno, conservando la autenticidad y el espíritu andaluz, y manteniendo vivo ese jardín tranquilo.",
+                text = stringResource(id = R.string.history_paragraph_4),
                 color = TextColorSecondary,
                 fontSize = 16.sp,
                 textAlign = TextAlign.Justify
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Al visitarnos, no solo disfrutarás de la mejor gastronomía en la Calle El Barrio, sino que te conectarás con una parte esencial y con solera de la historia turística de Nerja.",
+                text = stringResource(id = R.string.history_paragraph_5),
                 color = TextColor,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,

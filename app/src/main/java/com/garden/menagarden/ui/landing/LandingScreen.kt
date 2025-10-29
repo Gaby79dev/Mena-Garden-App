@@ -10,14 +10,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
+import com.garden.menagarden.R
 import com.garden.menagarden.ui.theme.MenaGardenTheme
 
 val primaryColor = Color(0xFF38e07b)
@@ -51,20 +56,22 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center
         ) {
             Image(
-                painter = rememberAsyncImagePainter("https://lh3.googleusercontent.com/aida-public/AB6AXuBzCGrySAe-qQMtd38ezCH-yS1YvPJmzFxqWikhoyovox6l1blGnO_Ix61cEZMQhnPOc9_1yJGZNK6Uy4vMVYyeRxrgUU-3zXXbshot386xd2wz3ebTaQBKm0xJBRu05k5r-s4l1kSBCv0TwY-NsT14A066K3En4RVyOYqoJaFBWjKUD6_69RT-yXPZUyXnl3dA6KyFv-j5Wz46ZasjtKgl5mO9wfQ7OCZVln1YOFbTN9L6xoyKZDMHnQVBnZPuvxbv8LtD_7emeIA"),
+                painter = painterResource(id = R.drawable.logo_app),
                 contentDescription = "Mena Garden Nerja Logo",
-                modifier = Modifier.size(64.dp)
+                modifier = Modifier
+                    .size(120.dp)
+                    .clip(CircleShape)
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Bienvenido a",
+                text = stringResource(id = R.string.landing_welcome_to),
                 color = Color.White,
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Mena Garden Nerja",
+                text = stringResource(id = R.string.landing_brand_name),
                 color = Color.White,
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
@@ -79,7 +86,7 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
                     .height(50.dp)
             ) {
                 Text(
-                    text = "Nuestra Historia",
+                    text = stringResource(id = R.string.landing_button_history),
                     color = backgroundDark,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
@@ -87,14 +94,14 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("menu?selectedTab=Comida") },
+                onClick = { navController.navigate("menu?selectedTab=food") },
                 colors = ButtonDefaults.buttonColors(containerColor = primaryColor),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
             ) {
                 Text(
-                    text = "Carta de Comidas",
+                    text = stringResource(id = R.string.landing_button_food_menu),
                     color = backgroundDark,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
@@ -102,14 +109,14 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("menu?selectedTab=Bebidas") },
+                onClick = { navController.navigate("menu?selectedTab=drinks") },
                 colors = ButtonDefaults.buttonColors(containerColor = primaryColor),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
             ) {
                 Text(
-                    text = "Carta de Bebidas",
+                    text = stringResource(id = R.string.landing_button_drinks_menu),
                     color = backgroundDark,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
@@ -124,7 +131,7 @@ fun LandingScreen(navController: NavController, modifier: Modifier = Modifier) {
                     .height(50.dp)
             ) {
                 Text(
-                    text = "Contacto y Localización",
+                    text = stringResource(id = R.string.landing_button_contact),
                     color = backgroundDark,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold

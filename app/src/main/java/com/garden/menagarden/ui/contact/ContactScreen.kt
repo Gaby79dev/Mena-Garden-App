@@ -21,11 +21,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.garden.menagarden.R
 import com.garden.menagarden.ui.menu.BackgroundDark
 import com.garden.menagarden.ui.menu.PrimaryColor
 import com.garden.menagarden.ui.menu.TextColor
@@ -38,12 +40,12 @@ fun ContactScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Contacto y Localización", color = TextColor) },
+                title = { Text(stringResource(id = R.string.contact_title), color = TextColor) },
                 navigationIcon = {
                     IconButton(onClick = { navController.navigateUp() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Volver",
+                            contentDescription = stringResource(id = R.string.contact_back_button_desc),
                             tint = TextColor
                         )
                     }
@@ -66,7 +68,7 @@ fun ContactScreen(navController: NavController) {
         ) {
             // Location Info
             Text(
-                text = "Nuestra Ubicación",
+                text = stringResource(id = R.string.contact_location_header),
                 color = PrimaryColor,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -91,18 +93,18 @@ fun ContactScreen(navController: NavController) {
             ) {
                 Icon(
                     imageVector = Icons.Default.Map,
-                    contentDescription = "Abrir en mapa",
+                    contentDescription = stringResource(id = R.string.contact_open_maps_button),
                     modifier = Modifier.size(ButtonDefaults.IconSize)
                 )
                 Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-                Text("Abrir en Google Maps", color = BackgroundDark)
+                Text(stringResource(id = R.string.contact_open_maps_button), color = BackgroundDark)
             }
 
             Spacer(modifier = Modifier.height(32.dp))
 
             // Phone Info
             Text(
-                text = "Llámanos",
+                text = stringResource(id = R.string.contact_call_us_header),
                 color = PrimaryColor,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -127,11 +129,11 @@ fun ContactScreen(navController: NavController) {
             ) {
                 Icon(
                     imageVector = Icons.Default.Phone,
-                    contentDescription = "Llamar",
+                    contentDescription = stringResource(id = R.string.contact_call_now_button),
                     modifier = Modifier.size(ButtonDefaults.IconSize)
                 )
                 Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-                Text("Llamar ahora", color = BackgroundDark)
+                Text(stringResource(id = R.string.contact_call_now_button), color = BackgroundDark)
             }
         }
     }

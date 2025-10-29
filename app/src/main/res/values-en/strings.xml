@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Mena Garden</string>
+
+    <!-- Menu Tabs -->
+    <string name="tab_food">Food</string>
+    <string name="tab_drinks">Drinks</string>
+
+    <!-- Landing Screen -->
+    <string name="landing_welcome_to">Welcome to</string>
+    <string name="landing_brand_name">Mena Garden Nerja</string>
+    <string name="landing_button_history">Our History</string>
+    <string name="landing_button_food_menu">Food Menu</string>
+    <string name="landing_button_drinks_menu">Drinks Menu</string>
+    <string name="landing_button_contact">Contact &amp; Location</string>
+
+    <!-- History Screen -->
+    <string name="history_title">Our History</string>
+    <string name="history_back_button_desc">Back</string>
+    <string name="history_header">Mena Garden: History and Tradition in the Heart of Nerja</string>
+    <string name="history_paragraph_1">Mena Garden is not just a restaurant; it is a place with a deep history rooted in the tradition of Nerja.</string>
+    <string name="history_paragraph_2">Our establishment stands on the foundations of the legendary Hostal Mena (or Pensión Mena), a tourist landmark that pioneered the region with over 50 years of activity. The hostel occupied a building dating from the 18th century (1700), an architectural gem of Andalusian essence.</string>
+    <string name="history_paragraph_3">The most distinctive element, which today gives our venue its name, was its extraordinary surroundings: more than 1,000 m² of exotic gardens overlooking the cliff, offering an oasis of peace in the center of the town.</string>
+    <string name="history_paragraph_4">Today, we have transformed this rich heritage into a modern space, preserving the authenticity and Andalusian spirit, and keeping that tranquil garden alive.</string>
+    <string name="history_paragraph_5">When you visit us, you will not only enjoy the best gastronomy on Calle El Barrio, but you will also connect with an essential and distinguished part of Nerja's tourist history.</string>
+
+    <!-- Contact Screen -->
+    <string name="contact_title">Contact &amp; Location</string>
+    <string name="contact_back_button_desc">Back</string>
+    <string name="contact_location_header">Our Location</string>
+    <string name="contact_open_maps_button">Open in Google Maps</string>
+    <string name="contact_call_us_header">Call Us</string>
+    <string name="contact_call_now_button">Call Now</string>
+</resources>
